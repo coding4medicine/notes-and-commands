@@ -8,8 +8,3 @@ embed sound -
          https://amazingaudioplayer.com/
 
 
-pagination -
-
-https://eduardoboucas.com/blog/2014/11/05/adding-ajax-pagination-to-jekyll.html
-
-

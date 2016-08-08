@@ -9,3 +9,10 @@ http://stackoverflow.com/questions/24717458/creating-a-website-with-jekyll-that-
 
 
 
+
+
+pagination -
+
+https://eduardoboucas.com/blog/2014/11/05/adding-ajax-pagination-to-jekyll.html
+
+

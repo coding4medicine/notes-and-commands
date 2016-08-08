@@ -2,20 +2,12 @@ https://jekyllthemes.io/
 
 http://jekyll.tips/templates/
 
-
-
-
-
+http://jekyllthemes.org/
 
 
 1.	minimal mistakes
 2.	agency
 3.	personal - panossakhon
-
-
-
-http://jekyll.tips/templates/
-http://jekyllthemes.org/
 
 -------------------------------------------
 blog-specific
@@ -62,3 +54,5 @@ http://themes.jekyllrc.org/jekyll-deck/
 Just a pretty front-page (mostly useless)
 
 http://themes.jekyllrc.org/front-cover/
+
+
