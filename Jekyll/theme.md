@@ -1,3 +1,13 @@
+https://jekyllthemes.io/
+
+http://jekyll.tips/templates/
+
+
+
+
+
+
+
 1.	minimal mistakes
 2.	agency
 3.	personal - panossakhon
