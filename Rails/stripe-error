@@ -1,0 +1,40 @@
+http://sofb.developer-works.com/article/20044016/Stripe+with+Rails+4%3A+This+customer+has+no+attached+payment+source
+
+Has anyone experienced this error when using Stripe (test mode) with rails 4: "This customer has no attached payment source"? It triggers line (customer = ) in my user.rb model:
+attr_accessor :stripe_card_token
+def save_with_payment
+if valid?
+customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
+self.stripe_customer_token = customer.id
+save!
+end
+end
+I have rechecked my form and my users.js and I see nothing wrong; spellings are perfect. My rails version is 4.2.0; ruby: 2.1.3p242
+
+
+
+
+
+Please try the below code: (Just replace the "card: stripe_card_token" => "source: stripe_card_token")
+attr_accessor :stripe_card_token
+def save_with_payment
+if valid?
+customer = Stripe::Customer.create(description: email, plan: plan_id, source: stripe_card_token)
+self.stripe_customer_token = customer.id
+save!
+end
+end
+
+
+
+
+
+
+http://stackoverflow.com/questions/31014977/stripe-token-not-getting-attached-to-request-body-for-rails-app
+
+
+https://www.rubyplus.com/articles/1181
+
+http://www.mzan.com/article/34566253-how-do-i-implement-different-plans-with-stripe-on-rails.shtml
+
+https://recordnotfound.com/koudoku-andrewculver-24438

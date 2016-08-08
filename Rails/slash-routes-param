@@ -1,0 +1,3 @@
+http://stackoverflow.com/questions/4273205/rails-routing-with-a-parameter-that-includes-slash
+
+match "urls/:url" => "urls#index", :constraints => {:url => /.*/}

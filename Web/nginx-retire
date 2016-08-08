@@ -1,0 +1,43 @@
+events {
+  worker_connections 1024;
+}
+
+http {
+  include /etc/nginx/mime.types;
+  index index.html index.htm;
+
+  default_type application/octet-stream;
+
+  upstream rails {
+    server localhost:3000;
+  }
+
+  server {
+    listen 80;
+    server_name localhost;
+
+    root /var/rails/rails_app;
+
+    # Protected directory
+    # Note: rails will handle /images_uri_dir requests
+    location /images_fs_dir/ {    
+      alias /var/rails/rails_app/;  # Append the path with /
+      internal;   # Can't access this directory from direct access from the web
+    }
+
+    location / {
+      proxy_redirect    off;
+
+      proxy_set_header  Host             $http_host;
+      proxy_set_header  X-Real-IP        $remote_addr;
+      proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+      proxy_set_header  X-Sendfile-Type  X-Accel-Redirect;
+      proxy_set_header  X-Accel-Mapping  /var/rails/rails_app/=/images_fs_dir/;
+
+      # Make sure you open and close your X-Accel-Mapping value with /
+
+      proxy_pass http://rails;
+    }
+  }
+}
