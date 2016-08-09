@@ -2,6 +2,21 @@
 
 https://github.com/ioscreator/ioscreator
 
+http://www.learniosdevblog.com/recipe-to-become-a-valuable-ios-developer/
+
+https://www.quora.com/What-are-the-best-resources-for-learning-iOS-development
+
+NYTimes objectivec C guide
+
+https://github.com/NYTimes/objective-c-style-guide
+
+http://nshipster.com/
+
+http://five.agency/xcode-keyboard-shortcuts-which-will-boost-your-productivity/
+
+https://www.codefellows.org/courses/code-401/advanced-software-development-in-ios
+
+
 
 # Charts
 

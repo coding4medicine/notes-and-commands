@@ -96,3 +96,11 @@ http://stackoverflow.com/questions/17234947/uitableviewcell-subclass
 http://shrikar.com/uitableview-and-uitableviewcell-customization-in-swift/
 
 
+# view controller extension
+
+http://krakendev.io/blog/subclassing-can-suck-and-heres-why
+
+http://blog.ios-developers.io/view-controller-extensions/
+
+
+
