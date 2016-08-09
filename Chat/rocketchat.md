@@ -1,7 +1,13 @@
-# Installation
+# Deploying Meteor application on ubuntu
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-meteor-js-application-on-ubuntu-14-04-with-nginx
+
+
+# Rocketchat installation
 
 From digitalocean
 
+~~~~~~~~
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 sudo apt-get update
@@ -22,8 +28,9 @@ export PORT=3000
 cd Rocket.Chat
 nohup mongod -dbpath /var/db/  &
 nohup node main.js  &
+~~~~~~~~
 
-# Password reset
+# If admin gets locked out of rocketchat
 
 Password reset and email confirmation.
 
@@ -37,7 +44,7 @@ https://github.com/RocketChat/Rocket.Chat/issues/1502
 
 https://github.com/RocketChat/Rocket.Chat/issues/766#issuecomment-139656453
 
-root@65ca236a61c7:/# mongo
+$ mongo
 MongoDB shell version: 3.0.6
 connecting to: test
 > use rocketchat
