@@ -44,6 +44,7 @@ https://github.com/RocketChat/Rocket.Chat/issues/1502
 
 https://github.com/RocketChat/Rocket.Chat/issues/766#issuecomment-139656453
 
+~~~~~~~~
 $ mongo
 MongoDB shell version: 3.0.6
 connecting to: test
@@ -56,3 +57,4 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 > db.getCollection('rocketchat_settings').find({ _id: 'Accounts_EmailVerification' })
 { "_id" : "Accounts_EmailVerification", "value" : false, "i18nLabel" : "Accounts_EmailVerification", "i18nDescription" : null, "type" : "boolean", "group" : "Accounts", "section" : "Registration", "public" : true }
 
+~~~~~~~~
