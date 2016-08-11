@@ -1,23 +1,19 @@
-active mailer
+# Active mailer
 
 https://launchschool.com/blog/handling-emails-in-rails
 
 http://guides.rubyonrails.org/action_mailer_basics.html
 
-
 http://www.carriedils.com/web-hosting-email/
 
 
-sendmail or postfix?
+# Sendmail or postfix?
 
 https://www.zoho.com/mail/help/zoho-smtp.html
 
-
 https://www.digitalocean.com/community/tutorials/how-to-set-up-zoho-mail-with-a-custom-domain-managed-by-digitalocean-dns
 
-
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-14-04
-
 
 https://www.digitalocean.com/community/tutorials/why-you-may-not-want-to-run-your-own-mail-server
 
@@ -26,8 +22,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfi
 http://arstechnica.com/information-technology/2014/02/how-to-run-your-own-e-mail-server-with-your-own-domain-part-1/2/
 
 
-multiple domains, same ip
-
+# Multiple domains, same ip
 
 http://serverfault.com/questions/385054/hosting-multiple-domains-on-a-single-email-server-with-one-ip
 
@@ -37,28 +32,21 @@ http://serverfault.com/questions/669445/mx-server-multiple-domains-on-one-ip
 
 http://serverfault.com/questions/443548/what-is-the-correct-mail-set-up-for-multiple-domains-on-one-server
 
-
-
-
-admin approval -
+# Admin approval 
 
 https://github.com/plataformatec/devise/wiki/How-To%3a-Require-admin-to-activate-account-before-sign_in
 
 
-replace with data from existing database
+# Replace with data from existing database
 
 http://stackoverflow.com/questions/4597570/putting-rails-over-top-of-an-existing-database
 
 http://edgeguides.rubyonrails.org/active_record_migrations.html
 
 
-
-sending emails 
-
+# Sending emails 
 
 http://lukepeters.me/blog/getting-the-php-mail-function-to-work-on-ubuntu
-
-
 
 http://guides.rubyonrails.org/action_mailer_basics.html
 
@@ -74,7 +62,6 @@ http://codeonhill.com/devise-cancan-and-activeadmin/
 http://activeadmin.info/
 
 http://rubyjunky.com/get-rid-of-your-admin-gem.html
-
 
 http://batsov.com/articles/2011/11/20/admin-interfaces-for-rails-apps-railsadmin-vs-activeadmin/
 

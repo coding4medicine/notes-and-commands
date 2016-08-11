@@ -1,3 +1,6 @@
+# Admin control
+
+
 https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
 
 https://github.com/RailsApps/rails-devise-roles
@@ -23,7 +26,6 @@ http://aflexsystem.com/how-to-create-a-simple-admin-control-panel-with-ruby-on-r
 rails admin
 
 https://www.youtube.com/watch?v=agzm_O-pZFE
-
 
 https://github.com/tutsplus/build-a-cms-with-rails
 

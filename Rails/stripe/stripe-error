@@ -1,3 +1,6 @@
+# stripe error
+
+
 http://sofb.developer-works.com/article/20044016/Stripe+with+Rails+4%3A+This+customer+has+no+attached+payment+source
 
 Has anyone experienced this error when using Stripe (test mode) with rails 4: "This customer has no attached payment source"? It triggers line (customer = ) in my user.rb model:

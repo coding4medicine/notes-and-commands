@@ -59,4 +59,15 @@ Then run -
 
 /usr/sbin/ipf -E -Fa -v -f /etc/ipf/ipf.conf
 
+# command to turnoff dtrace during ruby install
+
+after following the steps from digitalocean -
+https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04
+
+1.      CONFIGURE_OPTS="--disable-dtrace" rbenv install 2.1.2
+2.      rvm install --reconfigure -C --disable-dtrace ruby-2.0.0-p594
+3.      chmod -s /usr/sbin/dtrace
+
+https://github.com/rbenv/rbenv/issues/708
+http://stackoverflow.com/questions/23918889/trying-to-install-ruby-2-1-2-with-rbenv-on-osx-build-failed
 
