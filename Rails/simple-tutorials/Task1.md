@@ -24,29 +24,38 @@ echo "gem 'devise'" >> Gemfile
 bundle install
 rails generate devise:install
 rails generate devise user
+rake db:migrate
 ~~~~~~
 
 ## Locking access
 
 
-In controller, add 
+In app/controllers/posts_controller.rb, add in line 3 -
 
 ~~~~~~
 before_action :authenticate_user!
 ~~~~~~
 
 
-
 ## Configure devise
 
-In config/routes.rb, add 
+In config/routes.rb, add  in line 2 -
 
 ~~~~~~
 root 'posts#index'
 ~~~~~~
 
-For proper sign out (),
+For proper sign out (http://coding4medicine.com:21179/users/sign_out)
 
 In config/initializers/devise.rb, change 'delete' to 'get'.
 
+~~~~~~
+config.sign_out_via = :get
+~~~~~~
 
+
+## Run 
+
+~~~~~~
+rails s -b 0.0.0.0 -p 80
+~~~~~~

@@ -11,12 +11,17 @@ echo "gem 'devise'" >> Gemfile
 bundle install
 rails generate devise:install
 rails generate devise user
+rake db:migrate
 ~~~~
 
-In controller, add - 
+In PostController, add -  before_action :authenticate_user!
 In config/routes.rb, add - root 'posts#index'
-
 In config/initializers/devise.rb, change 'delete' to 'get'.
+
+
+## Set up email confirmation
+
+
 
 ## Email confirmation -
 
@@ -266,6 +271,11 @@ sudo apt-get install sendmail
 sendmail or postfix?
 
 
+
+
+
+
+
   714  rails generate devise:views users
   725  vi app/models/user.rb 
   728  vi db/migrate/20160312095215_devise_create_users.rb 
@@ -285,19 +295,3 @@ rake db:migrate
 
 rails s -b 0.0.0.0 -p 80
 
-
-vi devise.rb 
-
-
- 2304  cd config
- 2306  vi routes.rb 
- 2308  rails s -b 0.0.0.0 -p 80
- 2310  cd  app/
- 2314  vi user.rb 
- 2319  rails g migration add_confirmable_to_devise
- 2330  rake db:migrate
- 2333  cp Gemfile ~
- 2334  cd ..
- 2335  ls
- 2336  ls toy_app/
- 2337  rm -rf blog/ new_app_name/

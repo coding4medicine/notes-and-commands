@@ -23,7 +23,9 @@ http://aflexsystem.com/how-to-create-a-simple-admin-control-panel-with-ruby-on-r
 
 
 
-rails admin
+# rails admin
+
+Too complicated.
 
 https://www.youtube.com/watch?v=agzm_O-pZFE
 
