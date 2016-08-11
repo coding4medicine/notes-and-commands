@@ -1,43 +1,39 @@
-# _animations.scss
+# _normalize.scss
 
-# _base.scss
+# _variables.scss
 
-# _blockquotes.scss
+This file defines all SASS variables to be used by other files.
 
-# _buttons.scss
+# _grid.scss
 
-# _code.scss
+Grid system makes the page design easy. It replaces table-based design of older days.
 
-# _elements.scss
+# _mixins.scss
 
-# _footer.scss
-
-# _forms.scss
-
-# _header.scss
+SASS mixins are powerful tools.
 
 # _helpers.scss
 
-# _layout.scss
+# _base.scss, _posts.scss, _layout.scss, _print.scss
+
+# _header.scss, _footer.scss, _navigation.scss, _pagination.scss
+
+# _animations.scss, _blockquotes.scss, _buttons.scss
+
+# _code.scss, _syntax-highlighting.scss
+
+# _elements.scss
+
+# _forms.scss
 
 # _links.scss
 
 # _message.scss
 
-# _mixins.scss
-
-# _navigation.scss
-
 # _notices.scss
-
-# _pagination.scss
-
-# _posts.scss
 
 # _search.scss
 
-# _syntax-highlighting.scss
-
 # _tables.scss
 
-# _variables.scss
+# _functions.scss
