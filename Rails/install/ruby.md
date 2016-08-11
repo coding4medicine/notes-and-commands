@@ -1,7 +1,16 @@
+# Brightbox works great for ruby on ubuntu
+
+https://www.brightbox.com/blog/2016/01/06/ruby-2-3-ubuntu-packages/
+
+
+
 # INSTALL ruby after disabling dtrace:
 
-CONFIGURE_OPTS="--disable-dtrace" rbenv install 2.3.0
-rbenv global 2.3.0
+Note: ruby 2.3.0 and 2.3.1 fail using this method.
+
+CONFIGURE_OPTS="--disable-dtrace" rbenv install 2.2.4
+rbenv global 2.2.4
+
 
 ---------------------------------------------------------------
 
