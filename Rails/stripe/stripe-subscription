@@ -1,6 +1,5 @@
 # stripe subscription
 
-http://clogeny.com/2013/03/04/stripe-integration-with-rails-application/
 https://mikesabat.wordpress.com/2013/12/15/making-users-pay-building-a-site-with-strip-and-devise/
 
 http://stillriversoftware.com/blog/integrating-stripe-into-your-ruby-on-rails-app/
@@ -8,15 +7,9 @@ http://stillriversoftware.com/blog/integrating-stripe-into-your-ruby-on-rails-ap
 http://www.sitepoint.com/stripe-subscriptions-rails/
 	working demo -https://github.com/skmvasu/stripe_example
 
-https://www.youtube.com/watch?v=hyEsiwc0ys4
-
 https://www.airpair.com/ruby-on-rails/posts/adding-stripe-to-rails-with-webhooks
 	working demo - https://github.com/airpair/T0115-rails-dave-nance
 
 https://www.youtube.com/watch?v=hyEsiwc0ys4
+https://www.youtube.com/watch?v=hyEsiwc0ys4
 
-https://launchschool.com/blog/stripe-recurring
-
-https://mikesabat.wordpress.com/2013/12/15/making-users-pay-building-a-site-with-strip-and-devise/
-
-http://joelhooks.com/blog/2013/10/30/how-to-build-a-subscription-service-on-rails-a-noobs-guide/ - Useless

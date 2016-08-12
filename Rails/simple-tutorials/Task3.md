@@ -4,22 +4,21 @@
 ## Single stripe charge
 
 
-## Set up rails and devise Task1
+### Set up rails and devise Task1
 
 ~~~~~~
 rails new blog
 cd blog
-bundle install
-rails generate scaffold Post name:string title:string content:text
 echo "gem 'devise'" >> Gemfile
 echo "gem 'stripe'" >> Gemfile
 bundle install
+rails generate scaffold Post name:string title:string content:text
 rails generate devise:install
 rails generate devise user
 rake db:migrate
 ~~~~~~
 
-##  Create controller for stripe charges
+###  Create controller for stripe charges
 
 ~~~~~~
 rails generate controller charges new create
@@ -30,6 +29,8 @@ keep new as it is, but change create to -
 
 ~~~~~~
 def create
+
+
   # Amount in cents
   @amount = 500
 
@@ -48,7 +49,10 @@ def create
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
+
+
 end
+
 ~~~~~~
 
 In app/views/charges/new.html.erb -
@@ -96,7 +100,7 @@ add -
 ~~~~~~
 
 
-7. add stripe keys in config/initializer/stripe.rb
+add stripe keys in config/initializer/stripe.rb
 
 ~~~~~~
 Rails.configuration.stripe = {
@@ -107,6 +111,15 @@ Rails.configuration.stripe = {
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
 ~~~~~~
 
+or,
+~~~~~~
+Rails.configuration.stripe = {
+  :publishable_key => ENV['STRIPE_PUBLISHABLE_KEY'],
+  :secret_key      => ENV['STRIPE_SECRET_KEY']
+}
+
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+~~~~~~
 
 
 ~~~~~~
@@ -121,57 +134,5 @@ credit card number - 4242424242424242, expiration in future, any three digit num
 
 
 
-## Single pay with payola 
-
-This demo installs payola-based single stripe payment.
-
-1.	rails new D-payola-single-pay
-
-
-
-## Stripe subscription system along with devise - Koudoku
-
-
-1.	rails new E-koudoku
-2.	vi Gemfile --> add  -- gem 'devise', gem 'koudoku'
-3.	bundle install
-4.	rails generate devise:install
-        rails generate devise user
-	rails generate koudoku:install user (answer Y to all questions)
-	rails generate scaffold Post name:string title:string content:text
-	rake db:migrate
-
-
-5.	create plans from 'rails console'
-
-irb(main):> Plan.create({name:'platinum', price: 29.99, interval: 'month', stripe_id: 'platinum', features: 'none', display_order: 1})
-
-6.	In app/helper/application_helper.rb,
-
-module ApplicationHelper
-    include Koudoku::ApplicationHelper
-end
-
-7.	In views/layout/application.html.erb, add -
-
-	<%= yield :koudoku %>
-
----
-undefined method `plan_price'
-
-https://github.com/andrewculver/koudoku/issues/121
-
----
-
-
-before </head>
-
-9.	in views/posts/index.html.erb, add
-
-<%= link_to 'Pricing', main_app.pricing_path %>
-
-10.	add stripe keys in config/initializer/koudoku.rb or in environment variable
-
-
-
+## Stripe subscription system along with devise 
 
