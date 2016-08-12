@@ -135,7 +135,8 @@ credit card number - 4242424242424242, expiration in future, any three digit num
 
 ## Stripe subscription system along with devise 
 
-We will use haml here.
+We will use haml here, based on -
+https://www.sitepoint.com/stripe-subscriptions-rails
 
 ~~~~~~
 rails new blog
@@ -197,17 +198,99 @@ Stripe.api_key = Rails.configuration.stripe[:secret_key]
 In app/controllers/charges_controller.rb, remove everything and add -
 
 ~~~~
+class ChargesController < ApplicationController
+  require "stripe"
 
+  def create
+        subscription = Stripe::Plan.create(
+          :amount => (params[:amount].to_i)*100,
+          :interval => params[:interval],
+          :name => params[:name],
+          :currency => 'usd',
+          :id => SecureRandom.uuid # This ensures that the plan is unique
+        )
+        #Save the response to your DB
+        flash[:notice] = "Plan successfully created"
+        redirect_to '/subscription'
+  end
+
+  def plans
+        @stripe_list = Stripe::Plan.all
+        @plans = @stripe_list[:data]
+  end
+
+
+        def stripe_checkout
+                @amount = 10
+                charge = Stripe::Charge.create(
+                                :amount => @amount * 100,
+                                :currency => "usd",
+                                :source => params[:stripeToken],
+                                :description => "Test Charge"
+                )
+                flash[:notice] = "Successfully created a charge"
+                redirect_to '/subscription'
+  end
+
+    def subscription_checkout
+      plan_id = params[:plan_id]
+      plan = Stripe::Plan.retrieve(plan_id)
+      #This should be created on signup.
+      customer = Stripe::Customer.create(
+          :description => "Customer for test@example.com",
+          :source => params[:stripeToken],
+          :email => "test@example.com"
+        )
+      # Save this in your DB and associate with the user;s email
+      stripe_subscription = customer.subscriptions.create(:plan => plan.id)
+
+      flash[:notice] = "Successfully created a charge"
+      redirect_to '/plans'
+    end
+
+end
 ~~~~
 
 In app/views/charges folder, remove everything and add files -
 
 index.html.haml
 ~~~~
+%h1 Create a new subscription
+
+= form_tag('/subscription',{method: :post}) do
+        .form-group
+                %label Plan name
+                %input{:type => 'text', :name => 'name'}
+        .form-group
+                %label Plan interval
+                = select_tag 'interval', options_for_select(['month', 'year']), multiple: false, :include_blank => true,  class: "form-control"
+        .form-group
+                %label Plan Value
+                %input{:type => 'text', :name => 'amount'}
+
+        %button{:type => "submit"} Submit to Stripe
 ~~~~
 
 plans.html.haml
 ~~~~
+.plan-container
+        %ul
+                - @plans.each do |plan|
+                        %li.plan
+                                .header
+                                        =plan[:name]
+                                .price
+                                        =(plan[:amount]/100)
+                                = form_tag('/subscription_checkout', {method: :post, plan: plan}) do
+                                        %input{type: "hidden", name: "plan_id", value: plan[:id]}
+                                        %script{src: "https://checkout.stripe.com/checkout.js",
+                                                class: "stripe-button",
+                                                'data-key'=> "#{Rails.configuration.stripe[:publishable_key]}",
+                                                'data-amount'=> (plan[:amount]),
+                                                'data-email' => "customer@example.com",
+                                                'data-currency' => plan[:currency],
+                                                'data-image' => '/assets/sitepoint.png'}
+
 ~~~~
 
 
