@@ -45,7 +45,7 @@ In config/routes.rb, add  in line 2 -
 root 'posts#index'
 ~~~~~~
 
-For proper sign out (http://coding4medicine.com:21179/users/sign_out)
+For proper sign out (e.g. http://coding4medicine.com:21179/users/sign_out)
 
 In config/initializers/devise.rb, change 'delete' to 'get'.
 

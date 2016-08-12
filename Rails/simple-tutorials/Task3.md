@@ -4,14 +4,31 @@
 ## Single stripe charge
 
 
-1.	rails new A-stripe-simple-demo
+## Set up rails and devise Task1
 
-2.	add -> gem 'stripe' -> to Gemfile, and run -> bundle install
+~~~~~~
+rails new blog
+cd blog
+bundle install
+rails generate scaffold Post name:string title:string content:text
+echo "gem 'devise'" >> Gemfile
+echo "gem 'stripe'" >> Gemfile
+bundle install
+rails generate devise:install
+rails generate devise user
+rake db:migrate
+~~~~~~
 
-3.	rails generate controller charges new create
+##  Create controller for stripe charges
 
-4.	Go to charges-controller, keep new as it  but change create to -
+~~~~~~
+rails generate controller charges new create
+~~~~~~
 
+In app/controllers/charges_controller.rb,
+keep new as it is, but change create to -
+
+~~~~~~
 def create
   # Amount in cents
   @amount = 500
@@ -32,11 +49,11 @@ rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
 end
+~~~~~~
 
-5. 	in views
+In app/views/charges/new.html.erb -
 
-new.html.erb ->
-
+~~~~~~
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -55,37 +72,46 @@ new.html.erb ->
           data-amount="500"
           data-locale="auto"></script>
 <% end %>
+~~~~~~
 
 
-create.html.erb ->
+In app/views/charges/create.html.erb,
 
+~~~~~~
 <h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+~~~~~~
 
 
-6.	in config
+In config/routes.rb -
 
 comment out -
+~~~~~~
 #  get 'charges/new'
 #  get 'charges/create'
+~~~~~~
 
 add -
+~~~~~~
   resources :charges
+~~~~~~
 
 
 7. add stripe keys in config/initializer/stripe.rb
 
---------------------
+~~~~~~
 Rails.configuration.stripe = {
   :publishable_key => 'pk_test_xxxxx',
   :secret_key      => 'sk_test_xxxxx'
 }
 
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
+~~~~~~
 
---------------------
 
 
-8.	rails s -b 0.0.0.0 -p 80
+~~~~~~
+rails s -b 0.0.0.0 -p 80
+~~~~~~
 
 go to -> http://c4m.com:xxxx/charges/new/
 
@@ -145,7 +171,6 @@ before </head>
 <%= link_to 'Pricing', main_app.pricing_path %>
 
 10.	add stripe keys in config/initializer/koudoku.rb or in environment variable
-
 
 
 
