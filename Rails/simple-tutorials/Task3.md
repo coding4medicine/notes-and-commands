@@ -1,5 +1,24 @@
 # Set up recurring payment with Stripe
 
+## Setting up shell variables
+
+In .bashrc, add -
+
+~~
+export SECRET_KEY_BASE='..............'
+
+export STRIPE_SECRET_KEY='sk_.....'
+export STRIPE_PUBLISHABLE_KEY='pk_....'
+
+export MAIL_EMAIL='aaa@gmail.com'
+export MAIL_PWD='qqqqqqq'
+~~
+
+You may have to run .bashrc manually.
+
+http://hayne.net/MacDev/Notes/unixFAQ.html#shellStartup
+
+
 
 ## Single stripe charge
 
@@ -135,8 +154,14 @@ credit card number - 4242424242424242, expiration in future, any three digit num
 
 ## Stripe subscription system along with devise 
 
+
 We will use haml here, based on -
 https://www.sitepoint.com/stripe-subscriptions-rails
+
+The above link does not use devise, and its github code works well.
+
+
+### setting up rails and devise
 
 ~~~~~~
 rails new blog
@@ -156,10 +181,14 @@ In config/routes.rb, add - root 'posts#index'
 In config/initializers/devise.rb, change 'delete' to 'get'.
 
 
+### controller for charges
 
 ~~~~~~
 rails generate controller charges new create
 ~~~~~~
+
+
+### Routes
 
 In config/routes.rb, add -
 
@@ -172,6 +201,7 @@ In config/routes.rb, add -
 ~~~~~~
 
 
+### Stripe key
 
 add stripe keys in config/initializer/stripe.rb
 
@@ -194,6 +224,8 @@ Rails.configuration.stripe = {
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
 ~~~~
 
+
+### Controller
 
 In app/controllers/charges_controller.rb, remove everything and add -
 
@@ -251,6 +283,9 @@ class ChargesController < ApplicationController
 end
 ~~~~
 
+
+### Views
+
 In app/views/charges folder, remove everything and add files -
 
 index.html.haml
@@ -270,6 +305,9 @@ index.html.haml
 
         %button{:type => "submit"} Submit to Stripe
 ~~~~
+
+
+
 
 plans.html.haml
 ~~~~
@@ -295,6 +333,7 @@ plans.html.haml
 
 
 
+### Run
 
 ~~~~
 rails s -b 0.0.0.0 -p 80
