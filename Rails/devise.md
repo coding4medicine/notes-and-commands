@@ -29,6 +29,12 @@ https://launchschool.com/blog/how-to-use-devise-in-rails-for-authentication
 
 http://stackoverflow.com/questions/4114835/heroku-devise-missing-host-to-link-to-please-provide-host-parameter-or-set-d
 
+## Restricting access
+
+http://stackoverflow.com/questions/5794695/devise-restricting-actions-to-administrators
+
+http://stackoverflow.com/questions/28706539/rails-simple-access-control
+
 
 # registration with admin approval
 
@@ -39,3 +45,13 @@ https://github.com/plataformatec/devise/wiki/How-To:-Require-admin-to-activate-a
 # omniauth
 
 http://stackoverflow.com/questions/16643783/which-one-is-better-omniauth-or-omniauthdevise-for-twitter-verification
+
+
+# custom user field
+
+http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
+
+http://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
+
+https://gorails.com/blog/rails-4-0-and-devise-with-strong-params-and-custom-fields
+

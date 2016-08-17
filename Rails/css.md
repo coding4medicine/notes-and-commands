@@ -2,7 +2,9 @@
 
 This demo allows modification of css files from default devise.
 
-1.      rails new C-modify-css
+~~~~~~~~
+rails new C-modify-css
+~~~~~~~~
 
 layout
 

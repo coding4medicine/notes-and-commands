@@ -20,13 +20,12 @@ We are choosing sendmail over postfix.
 ~~~~
 rails new blog
 cd blog
-bundle install
-rails generate scaffold Post name:string title:string content:text
-rake db:migrate
 echo "gem 'devise'" >> Gemfile
 bundle install
+rails generate scaffold Post name:string title:string content:text
 rails generate devise:install
 rails generate devise user
+rake db:migrate
 ~~~~
 
 In app/controllers/posts_controller.rb, add -  before_action :authenticate_user!

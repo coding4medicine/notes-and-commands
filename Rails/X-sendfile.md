@@ -11,6 +11,20 @@ http://ranjithkumar.github.io/blog/2014/09/10/rails-number-send-file-plus-nginx-
 
 https://gist.github.com/Djo/11374407
 
+https://gist.github.com/vjt/804654
+
+Rack::sendfile
+
+https://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/sendfile.rb#L138
+
+http://www.rubydoc.info/github/rack/rack/Rack/Sendfile
+
+https://airbladesoftware.com/notes/rails-nginx-x-accel-mapping/
+
+
+
+
+
 http://stackoverflow.com/questions/4797820/how-can-i-secure-static-content-in-rails-3
 
 https://github.com/thoughtbot/high_voltage
@@ -46,4 +60,4 @@ https://mattbrictson.com/accelerated-rails-downloads
 http://blog.kiskolabs.com/post/637725747/nginx-rails-send-file
 
 https://www.nginx.com/resources/wiki/start/topics/examples/xsendfile/
-
+https://www.nginx.com/resources/wiki/start/topics/examples/x-accel/

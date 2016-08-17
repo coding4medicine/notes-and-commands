@@ -118,7 +118,7 @@ add -
 ~~~~~~
 
 
-add stripe keys in config/initializer/stripe.rb
+add stripe keys in config/initializers/stripe.rb
 
 ~~~~~~
 Rails.configuration.stripe = {
@@ -168,9 +168,10 @@ rails new blog
 cd blog
 echo "gem 'devise'" >> Gemfile
 echo "gem 'stripe'" >> Gemfile
-echo "gem 'haml'" >> Gemfile
 bundle install
 rails generate scaffold Post name:string title:string content:text
+echo "gem 'haml'" >> Gemfile
+bundle install
 rails generate devise:install
 rails generate devise user
 rake db:migrate
@@ -190,7 +191,7 @@ rails generate controller charges new create
 
 ### Routes
 
-In config/routes.rb, add -
+In config/routes.rb, delete 'get charges' lines and add -
 
 ~~~~~~
   resources :charges
@@ -203,7 +204,7 @@ In config/routes.rb, add -
 
 ### Stripe key
 
-add stripe keys in config/initializer/stripe.rb
+add stripe keys in config/initializers/stripe.rb
 
 ~~~~
 Rails.configuration.stripe = {

@@ -2,6 +2,14 @@
 
 rails s -b 0.0.0.0 -p 80
 
+# Time, datetime, stripe
+
+https://cbabhusal.wordpress.com/2016/02/19/ruby-unix-time-stamp-to-datetime-conversion/
+
+http://stackoverflow.com/questions/19331931/formatting-stripes-timestamps
+
+http://stackoverflow.com/questions/7816365/how-to-convert-a-unix-timestamp-seconds-since-epoch-to-ruby-datetime
+
 
 # File upload
 
@@ -48,4 +56,6 @@ http://stackoverflow.com/questions/22646048/rails-render-a-different-header-just
 # Connecting two rails models
 
 http://stackoverflow.com/questions/8510596/connecting-two-rails-models
+
+
 
