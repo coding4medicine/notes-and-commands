@@ -102,7 +102,8 @@ Change 'delete' to 'get' in config/initializers/devise.rb and then run -
 rake db:migrate
 ~~~~
 
-Create three users using the web form and then change their permissions using rails console.
+Create three users using the web form (http://example.com/users/sign_up)
+and then change their permissions using rails console.
 ~~~~~~
 >rails console
 irb(main):032:0> @user=User.find(1)
