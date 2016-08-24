@@ -345,4 +345,3 @@ go to -> http://c4m.com:xxxx/plans
 Choose a plan. Use credit card number - 4242424242424242, expiration in future, 
 any three digit number.
 
-
