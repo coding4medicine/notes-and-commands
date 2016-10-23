@@ -1,0 +1,109 @@
+webhook
+
+https://launchschool.com/blog/stripe-recurring
+https://www.sitepoint.com/stripe-subscriptions-rails/
+
+
+
+stripe_events gem
+
+https://github.com/integrallis/stripe_event
+
+http://blog.crowdint.com/2014/04/11/how-to-listen-to-stripe-webhooks-and-use-them-in-your-dev-environment.html
+
+https://coderwall.com/p/yqp1wa/be-lazy-when-testing-stripe-webhooks
+
+
+
+https://www.airpair.com/ruby-on-rails/posts/adding-stripe-to-rails-with-webhooks
+
+http://stackoverflow.com/questions/9627580/stripe-webhook-on-rails
+
+
+
+
+
+custom checkout -
+
+https://stripe.com/docs/checkout#integration-custom
+
+
+----------------------------------------
+extra fields -
+
+http://stackoverflow.com/questions/28247894/adding-parameters-with-stripe-checkout
+
+
+You can just add extra <input> fields inside the form you use for Checkout. They will get posted along with the Stripe token
+
+<form action="/charge" method="POST">
+  <input type="text" name="extraParam">
+  <input type="text" name="extraParam2">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_XXX"
+    data-image="/square-image.png"
+    data-name="Demo Site"
+    data-description="2 widgets ($20.00)"
+    data-amount="2000">
+  </script>
+</form>
+The other solution would be to use Custom Checkout to retrieve the token in the token() callback and then add it as a hidden input in your own form and submit that.
+
+---------------------------------------------
+
+new --> goes to create -->
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"></script>
+
+
+form_tag to specify the callback -->
+
+form_tag('/subscription_checkout', {method: :post, plan: plan}) do
+                                        %input{type: "hidden", name: "plan_id", value: plan[:id]}
+                                        %script{src: "https://checkout.stripe.com/checkout.js",
+                                                class: "stripe-button",
+                                                'data-key'=> "#{Rails.configuration.stripe[:publishable_key]}",
+                                                'data-amount'=> (plan[:amount]),
+                                                'data-email' => "customer@example.com",
+                                                'data-currency' => plan[:currency],
+                                                'data-image' => '/assets/sitepoint.png'}
+
+
+
+------------------------------------------------------------
+
+In callback -
+
+one step charge -
+
+charge = Stripe::Charge.create( :amount => @amount * 100, :currency => "usd", :source => params[:stripeToken], :description => "Test Charge")
+
+
+two step charge -
+
+customer = Stripe::Customer.create( :email => params[:stripeEmail], :source  => params[:stripeToken])
+
+charge = Stripe::Charge.create( :customer    => customer.id, :amount      => @amount, :description => 'Rails Stripe customer', :currency    => 'usd')
+
+card error -
+
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to new_charge_path
+
+
+two step subscription -
+
+customer = Stripe::Customer.create( :description => "Customer for test@example.com", :source => params[:stripeToken], :email => "test@example.com")
+
+stripe_subscription = customer.subscriptions.create(:plan => plan.id)
+
+------------------------------------------------------------
+
+webhook -
+

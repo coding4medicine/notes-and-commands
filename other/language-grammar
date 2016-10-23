@@ -1,0 +1,30 @@
+C	-	http://www.cs.man.ac.uk/~pjj/bnf/c_syntax.bnf
+python	-	https://docs.python.org/3/reference/grammar.html
+ruby	-	https://www.cse.buffalo.edu/~regan/cse305/RubyBNF.pdf
+lisp	-	http://cui.unige.ch/isi/bnf/LISP/BNFlisp.html
+
+https://www.youtube.com/watch?v=8X69_42Mj-g
+
+
+
+http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html
+
+
+https://news.ycombinator.com/item?id=10183156
+
+
+
+
+If you're asking yourself what kinds of problems is a Lisp good for you should probably watch this: https://www.youtube.com/watch?v=8X69_42Mj-g (A computational chemist built himself his own Common Lisp implementation because no other language available was powerful enough for his needs...)
+It basically boils to: if you're solving a truly new and interesting problems for which the current libraries and ecosystems don't matter that much to you anyhow (because what you do is too bleeding-edge / ahead of everyone else, so you'll write your own better stuff anyhow), than you might want to choose a Lisp.
+And if your problem is so bleeding-edge and exotic that you also need to build your own programming-language for it, than you might just as well build yourself a Lisp (like the guy in the video did) and add your needed features to it, because this would be easier than any other approaches and allow you to spend more time on your problem and not on the language...
+EDIT+: another example is DWave using SBCL: http://www.dwavesys.com/careers/senior-software-developer - if quantum (or analog... anyway...) computing is not "truly new and cutting edge", than I don't know what is
+ 	
+jlarocco 375 days ago [-]
+
+I can't believe an article about Lisp left out QuickLisp. It's the most popular Common Lisp package manager and has over 1200 open source libraries in it, and most of them are written in Common Lisp, or are bindings to native C/C++ libraries. Using libraries written in the same language you're using has a lot of advantages. Using Java libraries from a Lisp seems clunky.
+Also, judging solely by the number of available packages is not a good measurement. Browse through NPM, and it's pretty obvious there are a LOT of duplicates, and that people have published libraries for the silliest little things. Search for "PNG", for example, and in the first page of results there are two different png diff libraries, a few libraries for determining if a buffer contains a PNG byte-stream, multiple stream and un-stream libraries, etc. That's all done with a single library in CL.
+And finally, I don't think Clojure is that great. It's better than Java, and it's what I'd use if I had a lot of legacy Java code to work with, but it wouldn't be my first choice for a new project written in Lisp. I would hazard a guess that it's popular because it's less clunky than Java, without the over the top type system of Scala.
+
+
+

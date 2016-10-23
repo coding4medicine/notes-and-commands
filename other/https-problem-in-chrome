@@ -1,0 +1,6 @@
+solution to yesterday's chrome only problem for https -
+
+add this in nginx -
+
+proxy_set_header X-Forwarded-Ssl on;
+

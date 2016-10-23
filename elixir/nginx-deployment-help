@@ -1,0 +1,112 @@
+### rails base_uri and scope
+
+http://stevesaarinen.com/blog/2013/05/16/mounting-rails-in-a-subdirectory-with-nginx-and-unicorn/
+
+http://stackoverflow.com/questions/31883197/run-rails-app-under-subfolder
+
+http://stackoverflow.com/questions/5558900/changing-the-base-url-for-rails-3-development
+
+http://stackoverflow.com/questions/2660172/how-do-i-set-default-host-for-url-helpers-in-rails
+
+http://stackoverflow.com/questions/16305453/base-url-of-rails-app-in-model
+
+## Phoenix equivalent
+
+https://groups.google.com/forum/#!topic/phoenix-talk/MdrvJHZspNE
+
+config/prod.esx:
+
+  config :rest_api, RestApi.Endpoint,
+  http: [port: {:system, "PORT"}],
+  url: [path: "/web_app1"]
+
+
+
+### how to get the current url in phoenix
+
+http://stackoverflow.com/questions/37735351/how-to-get-the-current-url-in-phoenix-framework
+
+
+### how to make nginx reqrite uris
+
+http://superuser.com/questions/690916/how-to-make-nginx-rewrite-uris-in-http-body-content
+
+### discussion of static assets
+
+https://github.com/phoenixframework/phoenix/issues/864
+
+### subdomains with phoenix
+
+http://blog.gazler.com/blog/2015/07/18/subdomains-with-phoenix/
+
+
+### 
+
+http://stackoverflow.com/questions/35691974/redirect-elixir-phoenix-request-from-root-domain-to-www
+
+"Redirect Elixir Phoenix request from root domain to www"
+Shows how to write a plug to redirect.
+
+
+### 
+
+http://stackoverflow.com/questions/35226024/how-to-add-a-plug-in-elixir-phoenix-before-the-router
+
+"How to add a Plug in Elixir / Phoenix before the Router?"
+Ans. "Your router is called explicitly in lib/my_app/endpoint.ex. You can add any plugs you like in that file before then."
+
+defmodule HelloPhoenix.Endpoint do
+  use Phoenix.Endpoint, otp_app: :hello_phoenix
+  plug Plug.RequestId
+  plug Plug.Logger
+  ...
+  plug CustomRedirectPlug # Add your plug here
+  plug HelloPhoenix.Router
+end
+
+
+### 
+
+https://groups.google.com/forum/#!topic/phoenix-talk/UUhvWdfE5Nc
+
+"Phoenix deployed to a subdirectory behind Nginx" - does not have much
+
+
+https://github.com/elixir-lang/plug/issues/126
+
+
+
+### Deploy:
+
+http://www.phoenixframework.org/v0.6.2/docs/deployment
+https://medium.com/@a4word/setting-up-phoenix-elixir-with-nginx-and-letsencrypt-ada9398a9b2c#.g4vgbowp0
+http://www.elixirdose.com/post/phoenix_part_5_deploying_phoenix_the_final_part
+https://medium.com/@diamondgfx/deploying-phoenix-applications-with-exrm-97a3867ebd04#.1h97j7qxw
+http://gabrieljaldon.com/articles/deploying-phoenix-with-git.html
+
+http://vinsol.com/blog/2016/04/29/building-an-exrm-release-including-nectarcommerce/
+https://scholar.live/question/cannot-start-phoenix-release
+http://stackoverflow.com/questions/37200190/shutdown-failed-to-start-child-myapp-endpoint-in-phoenix-elixir
+http://stackoverflow.com/questions/33316661/running-a-phoenix-application-release-with-exrm-crashes
+
+https://groups.google.com/forum/#!topic/phoenix-talk/3CQMA8n2XZw
+https://groups.google.com/forum/#!topic/phoenix-talk/JAzxUpzIYmw
+make code-reloader:false in dev.exs
+
+https://github.com/phoenixframework/phoenix/issues/209
+
+
+# nginx questions
+
+http://stackoverflow.com/questions/17423414/nginx-proxy-pass-subpaths-not-redirected
+http://stackoverflow.com/questions/25187817/nginx-reverse-proxy-images-and-css-are-not-loaded
+http://stackoverflow.com/questions/32784008/phoenix-render-template-of-other-folder
+https://github.com/phoenixframework/phoenix/issues/416
+http://serverfault.com/questions/635210/node-js-express-nginx-static-file-paths-break-with-name-spaced-proxy-pass
+http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/
+https://www.linode.com/docs/uptime/loadbalancing/use-nginx-as-a-front-end-proxy-and-software-load-balancer
+https://github.com/gilbitron/Raneto/issues/10
+https://elixirforum.com/t/phoenix-behind-a-nginx/1313
+http://stackoverflow.com/questions/37737565/nginx-not-displaing-phoenix-web-app
+
+

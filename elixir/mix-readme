@@ -1,0 +1,24 @@
+https://www.amberbit.com/elixir-cocktails/phoenix/creating-database-crud-with-scaffold/
+
+
+mix phoenix.gen.html Post posts title body:text
+
+
+
+resources "/posts", PostController
+
+
+mix phoenix.gen.html Comment comments name content post:belongs_to
+
+-------------------------------------------
+
+  365  mix phoenix.gen.model User users email:string password_hash:string reset_password_token:string reset_password_sent_at:datetime confirmation_token:string confirmation_sent_at:datetime confirmed_at:datetime
+  534  mix phoenix.gen.model Book books title:string author:string image:string price:float visible:boolean
+  536  mix phoenix.gen.model Book books title:string author:string image:string price:float visible:boolean
+  537  mix phoenix.gen.model Plan plans name:string stripe_id:string price:float interval:datetime visible:boolean
+  538  mix phoenix.gen.model Sshkey sshkeys user_id:integer key:string
+  539  mix phoenix.gen.model BuyBook buybooks user_id:integer book_id:integer stripe_id:string card_four:integer price:float
+  540  mix phoenix.gen.model BuyPlan buyplans user_id:integer plan_id:integer stripe_id:string card_four:integer price:float status:integer request_date:datetime purchase_date:datetime end_date:datetime 
+  541  mix phoenix.gen.model Referral referralsoldemail:string newemail:string oldid:integer newid:integer bonuspaid:boolean
+  542  mix phoenix.gen.model Referral referrals oldemail:string newemail:string oldid:integer newid:integer bonuspaid:boolean
+  544  mix phoenix.gen.model Admin admins email:string password_hash:string reset_password_token:string reset_password_sent_at:datetime confirmation_token:string confirmation_sent_at:datetime confirmed_at:datetime

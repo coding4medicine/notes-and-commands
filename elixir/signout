@@ -1,0 +1,1 @@
+<%= link "Sign out", to: session_path(@conn, :delete, :access), method: :delete, class: "btn btn-default btn-flat" %>

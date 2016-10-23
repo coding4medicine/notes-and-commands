@@ -1,0 +1,8 @@
+    ssh to the machine and forward localhost port 5901 to remote port 5901
+        ssh loginname@67.131.0.254 -p 55557 -R 5901:localhost:5901
+        must keep this ssh session open while you are logged in via VNC
+    start a vnc server on the remote machine
+        vnc4server -geometry 1860x980 -depth 24 :1
+    VNC to the system
+        connect to localhost::5901
+

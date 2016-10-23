@@ -1,0 +1,19 @@
+
+
+Subscription Load (0.3ms)  SELECT  "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."id" =
+? LIMIT 1  [["id", 1]]
+=> #<Subscription id: 1, stripe_id: "cus_8xxxxxxxx", plan_id: 1, last_four: "4242", coupon_id: nil
+, card_type: "undefined", current_price: 4.99, user_id: 1, created_at: "2016-04-06 23:35:04", updated_a
+t: "2016-04-11 14:51:11">
+
+
+
+
+Stripe integration
+
+http://www.jaredrader.com/blog/2013/12/18/a-stripe-integration
+https://mikesabat.wordpress.com/2013/12/15/making-users-pay-building-a-site-with-strip-and-devise/
+https://www.youtube.com/watch?v=hyEsiwc0ys4
+http://stackoverflow.com/questions/9628359/using-stripe-with-devise
+
+

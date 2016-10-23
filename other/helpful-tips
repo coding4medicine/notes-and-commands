@@ -1,0 +1,67 @@
+                markdown embed video - http://stackoverflow.com/questions/14192709/is-it-possible-to-embed-youtube-vimeo-videos-in-markdown-using-a-c-sharp-markdow
+
+                embed pdf - PDFObject - http://stackoverflow.com/questions/14081128/how-can-i-embed-a-pdf-viewer-in-a-web-page
+                https://blog.udemy.com/html5-pdf-viewer/
+
+                embed sound -
+                http://www.imcreator.com/blog/embed-audio-website-shouldnt-bother/
+                https://amazingaudioplayer.com/
+
+
+devise - create user as seed (password confirmation) -
+
+@user = User.new(:email => 'test@example.com', :password => 'password', :password_confirmation => 'password')
+@user.skip_confirmation!
+@user.save
+
+
+
+devise admin -
+
+        https://github.com/plataformatec/devise/wiki/How-To:-Manage-users-through-a-CRUD-interface
+
+
+
+
+
+1.      new controller -
+
+        http://stackoverflow.com/questions/5288030/rails-3-passing-parameter-to-new-method
+        http://stackoverflow.com/questions/14790310/rails-pass-parameters-to-new-method
+        http://api.rubyonrails.org/classes/ActionController/Parameters.html
+
+
+
+
+1.      link_to path
+
+        http://www.devkit.co/code/20-rails-full-path-url/
+
+http://stackoverflow.com/questions/8477301/link-to-path-definition
+
+http://mixandgo.com/blog/how-to-use-link_to-in-rails
+
+
+1.      devise user CRUD -
+                https://www.google.com/#q=rails+devise+user+crud
+
+                http://stackoverflow.com/questions/17594939/check-if-current-user-is-the-owner-of-a-resource-and-allow-edit-delete-actions
+                http://stackoverflow.com/questions/7414283/rails-current-user-should-only-see-records-from-his-her-own-group-how-do-i-do
+                http://stackoverflow.com/questions/10220245/ruby-on-rails-limit-user-only-to-specific-data
+
+2.      rails console - manually encrypt password
+
+http://stackoverflow.com/questions/7919584/rails-3-1-create-one-user-in-console-with-secure-password
+
+http://stackoverflow.com/questions/8015758/devise-manually-encrypt-password-and-store-directly
+
+
+1.      admin in a folder -
+
+                http://stackoverflow.com/questions/18264446/rails-4-grouping-controllers-in-a-folder
+                http://stackoverflow.com/questions/18934115/rails-4-organize-rails-models-in-sub-path-without-namespacing-models
+                http://stackoverflow.com/questions/22049382/how-to-organize-controller-directory-in-rails-4-without-messing-up-routes
+
+
+
+
