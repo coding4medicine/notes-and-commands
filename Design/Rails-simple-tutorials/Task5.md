@@ -3,22 +3,29 @@ uploading ssh key
 
 We will create user-restricted ssh keys. Also, we will create accounts, etc.
 
-
-> rails new try-ssh
+~~~~~~~~
+rails new try-ssh
+~~~~~~~~
 
 install devise
 
 Then, 
 
+~~~~~~~~
 rails generate scaffold Sshkey user_id:integer key:string
+~~~~~~~~
 
 
-try-ssh/app/models/user.rb
+In try-ssh/app/models/user.rb, add -
 
+~~~~~~~~
 has_many :sshkeys
+~~~~~~~~
 
-try-ssh/app/models/sshkey.rb
+In try-ssh/app/models/sshkey.rb, add -
+~~~~~~~~
 belongs_to :user
+~~~~~~~~
 
 
 Then - 'rake db:migrate'
@@ -84,7 +91,6 @@ add -
         f.close
         cmd="scp /tmp/keys/"+filename+" aa@10.0.0.111:keys/"
         value=`#{cmd}`
-
 ~~~~~~~~
 
 new:
@@ -110,7 +116,6 @@ Step 3. use cron in the bioinfo server to create accounts and also
 
 http://www.thesitewizard.com/general/set-cron-job.shtml
 
-
 -----------------------------------------------------------------
 
 automate -
@@ -122,5 +127,4 @@ https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/St
 (ii) add sshkey to the account
 
 (iii) add necessary files to the account
-
 
