@@ -1,5 +1,5 @@
 require "stripe"
-Stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+Stripe.api_key = "sk_test_BHlWaaaaaasdsdsdDFGRTsdsgaa"
 
 $x=Stripe::Charge.retrieve(
   "ch_18hl572eZvKYlo2CGCNVjuJx",
