@@ -1,0 +1,32 @@
+production mode -
+
+http://stackoverflow.com/questions/30119144/rails-how-to-switch-between-dev-and-production-mode
+
+http://stackoverflow.com/questions/7154145/how-to-deploy-rails-in-production-mode
+
+
+  311  RAILS_ENV=production bundle exec rake db:migrate
+  312  RAILS_ENV=production bundle exec rake db:create
+  313  RAILS_ENV=production bundle exec rake db:migrate
+  314  RAILS_ENV=production bundle exec rake db:seed
+  315  rails server -e production -b 0.0.0.0 -p 80
+
+
+
+http://stackoverflow.com/questions/3514633/do-ruby-on-rails-sites-have-performance-issues
+
+------------------------------------
+
+https://gorails.com/episodes/deploy-actioncable-and-rails-5
+
+https://www.railstutorial.org/book/beginning
+
+https://www.ralfebert.de/tutorials/rails-deployment/
+
+https://www.sitepoint.com/shelly-cloud-deploy-rails-app-less-5-minutes/
+
+https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04
+
+
