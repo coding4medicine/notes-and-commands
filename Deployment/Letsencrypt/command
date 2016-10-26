@@ -1,0 +1,2 @@
+./letsencrypt-auto certonly -a webroot --webroot-path=/usr/share/nginx/html -d c4m.com -d www.c4m.com
+
