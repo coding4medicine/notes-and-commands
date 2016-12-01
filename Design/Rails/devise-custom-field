@@ -1,0 +1,5 @@
+devise -
+
+http://stackoverflow.com/questions/16471498/adding-extra-registration-fields-with-devise
+http://stackoverflow.com/questions/16297797/add-custom-field-column-to-devise-with-rails-4
+http://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
